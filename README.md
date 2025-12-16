@@ -5,13 +5,13 @@ Bu proje, Genetik Algoritma (GA) kullanarak kısıtlı bir optimizasyon problemi
 
 ---
 
-### Öğrenci ve Proje Bilgileri
+### Öğrenci ve Proje Bilgileri:
 
 * Öğrenci Adı Soyadı: Rümeysa Canpolat
 * Okul Numarası: 2312721021
 * GitHub Repo Bağlantısı: [https://github.com/rum3ysa/genetik_optimizasyonu]
 
-### Problemin Modeli
+### Problemin Modeli:
 
 Amaç Fonksiyonu:
 $y = 6x_{1} + 4x_{2} - 0.1x_{1}^{2}$ (Enerji Verim Puanı)
@@ -22,7 +22,19 @@ Kısıtlar ve Değişkenler:
 3. $x_{1} + 0.5x_{2} \le 60$ (Alan Sınırı)
 4. $x_{2} \ge 15$ (Minimum Yönlenme)
 
-### GA Çözüm Sonuçları
+### Parametreler:
+- **Popülasyon Büyüklüğü (POP_SIZE):** 50 birey
+- **Nesil Sayısı (NUM_GENERATIONS):** 100
+- **Mutasyon Oranı (MUTATION_RATE):** 0.1 (%10)
+
+### GA Bileşenleri:
+- **Seçim (Selection):** Tournament Selection (k=3)
+- **Çaprazlama (Crossover):** Arithmetic Crossover
+- **Mutasyon (Mutation):** Uniform Mutation
+- **Elitizm:** Her nesilde en iyi birey korunur
+
+- 
+### GA Çözüm Sonuçları:
 
 Algoritma, 100 nesillik çalışma sonucunda kısıtları ihlal etmeden en yüksek verim puanını bulmuştur.
 
@@ -31,11 +43,11 @@ Algoritma, 100 nesillik çalışma sonucunda kısıtları ihlal etmeden en yüks
 * Maksimum Enerji Verim Puanı ($y$): 411.76
 * Kısıt Kontrolü: $x_{1} + 0.5x_{2} = 59.98$ (Sınırda başarı.)
 
-#### Analiz
+#### Analiz:
 
 Enerji Evrimi grafiği, çözümün 20-30. nesillerde kararlı hale geldiğini gösterir. Ceza mekanizması sayesinde, algoritma kısıt sınırını (60) zorlayarak 59.98 değerine ulaşmış ve bu sayede maksimum verim hedefine ulaşmıştır.
 
-### Görselleştirmeler
+### Görselleştirmeler:
 
 Aşağıdaki grafikler, algoritmanın ilerleyişini ve çözümün kalitesini görsel olarak desteklemektedir.
 
@@ -44,3 +56,20 @@ Aşağıdaki grafikler, algoritmanın ilerleyişini ve çözümün kalitesini g�
 
 2. *$x_{1}$ ve $x_{2}$ Değişkenlerinin Nesiller Boyunca Evrimi*
    ![x1 ve x2 Değişkenlerinin Nesiller Boyunca Evrimi](images/variables_evolution.png)
+
+   
+   ### Kurulum:
+1. Repository'yi klonlayın:
+```bash
+git clone https://github.com/rum3ysa/genetik_optimizasyonu.git
+cd genetik_optimizasyonu
+```
+
+2. Gerekli kütüphaneleri yükleyin:
+```bash
+pip install numpy matplotlib
+```
+
+3. Jupyter Notebook'u çalıştırın:
+```bash
+jupyter notebook yzsodev_genetik_optimizasyonu.ipynb
